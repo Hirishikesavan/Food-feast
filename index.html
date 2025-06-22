@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Feast | Gourmet Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Food Feast</h1>
+        <nav class="nav-links">
+            <a onclick="showSection('home')">Home</a>
+            <a onclick="showSection('menu')">Menu</a>
+            <a onclick="showSection('order')">Cart (<span id="cart-count">0</span>)</a>
+            <a onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page-section active">
+            <div>
+                <button class="cta-button" onclick="showSection('menu')">Explore Menu</button>
+            </div>
+        </section>
+
+        <section id="menu" class="page-section">
+            <h2>Dishes</h2>
+            <div class="menu-grid" id="menu-container"></div>
+            <div class="proceed-button">
+                <button class="cta-button" onclick="showSection('order')">Proceed to Order</button>
+            </div>
+        </section>
+
+        <section id="order" class="page-section">
+            <div class="order-container">
+                <h2>Your Order Summary</h2>
+                <div id="cart-items"></div>
+                <p id="total-price">Total: ₹0</p>
+                
+                <h3>Delivery Information</h3>
+                <form class="order-form" onsubmit="placeOrder(event)">
+                    <input type="text" class="form-input" placeholder="Full Name" required>
+                    <input type="text" class="form-input" placeholder="Delivery Address" required>
+                    <input type="tel" class="form-input" placeholder="Phone Number" required>
+                    <button type="submit" class="cta-button">Confirm Order</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div id="feedback-form">
+                <h3>Your Feedback</h3>
+                <textarea placeholder="Share your dining experience..."></textarea>
+                <div class="feedback-button">
+                    <button class="cta-button" onclick="submitFeedback()">Submit Feedback</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
